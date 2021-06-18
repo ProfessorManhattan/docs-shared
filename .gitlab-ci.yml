@@ -1,0 +1,8 @@
+---
+stages:
+  - fix
+  - deploy
+
+include:
+  - remote: https://gitlab.com/megabyte-labs/ci/gitlab-ci-templates/-/raw/master/prettier-fix.gitlab-ci.yml
+  - remote: https://gitlab.com/megabyte-labs/ci/gitlab-ci-templates/-/raw/master/propagate-docs.gitlab-ci.yml
