@@ -26,6 +26,7 @@
     "tinypng": "https://tinypng.com/"
   },
   "organization": "Megabyte Labs",
+  "prettier_config": "@megabytelabs/prettier-config",
   "profile": {
     "galaxy": "professormanhattan",
     "github": "ProfessorManhattan",
