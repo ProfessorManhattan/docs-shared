@@ -75,6 +75,7 @@
     "twitter": "MegabyteLabs",
     "vagrant": "https://app.vagrantup.com"
   },
+  "sharp_instructions": [],
   "subgroup": "[[ Needs to be setup. Set this in the common repository for this type of project ]]",
   "repo": "[[ package.json .blueprint.repo - See CONTRIBUTING.md ]]",
   "repository": {
