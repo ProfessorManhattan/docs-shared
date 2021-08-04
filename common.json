@@ -11,7 +11,7 @@
   "company": "Megabyte LLC",
   "copyright": "2020-2021",
   "docker_label_authors": "Brian Zalewski <brian@megabyte.space>",
-    "docs": {
+  "docs": {
     "header_description_post": "<i></i>",
     "header_description_pre": "<i></i>",
     "header_title_pre": "<i></i>",
