@@ -23,10 +23,10 @@
     "python": false,
     "yaml": false
   },
-  "header_description_post": "",
-  "header_description_pre": "",
-  "header_title_pre": "",
-  "header_title_post": "",
+  "header_description_post": "<i></i>",
+  "header_description_pre": "<i></i>",
+  "header_title_pre": "<i></i>",
+  "header_title_post": "<i></i>",
   "json_top_keys": "",
   "license": "MIT",
   "link": {
@@ -45,7 +45,7 @@
     "tinypng": "https://tinypng.com/"
   },
   "organization": "Megabyte Labs",
-  "overview": "This is a new repository without the details filled in yet. Look for the section about blueprint data in the CONTRIBUTING.md to set up the project.",
+  "overview": "[[ This is a new repository without the details filled in yet. Look for the section about blueprint data in the CONTRIBUTING.md to set up the project. ]]",
   "profile": {
     "dockerhub": "megabytelabs",
     "galaxy": "professormanhattan",
