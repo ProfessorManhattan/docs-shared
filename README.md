@@ -7,18 +7,18 @@
 </div>
 <div align="center">
   <center><h1>Common Documentation</h1></center>
-  <center><h4 style="color: #18c3d1;">Documentation partials for generating sweet READMEs (and auto-generating other files) for hundreds of repositories</h4></center>
+  <center><h4 style="color: #18c3d1;">Documentation partials and JSON variables for generating sweet READMEs and templated files for hundreds of repositories</h4></center>
 </div>
 
 [![-----------------------------------------------------](https://gitlab.com/megabyte-labs/assets/-/raw/master/png/aqua-divider.png)](#table-of-contents)
 
 ## Table of Contents
 
-- [Summary](#summary)
-- [Repository Types](#repository-types)
-- [Requirements](#repository-pipeline-order)
-- [Flow Summary](#flow-summary)
-- [`common.json`](#common-json)
+- [➤ Summary](#summary)
+- [➤ Repository Types](#repository-types)
+- [➤ Requirements](#repository-pipeline-order)
+- [➤ Flow Summary](#flow-summary)
+- [➤ `common.json`](#common-json)
 
 [![-----------------------------------------------------](https://gitlab.com/megabyte-labs/assets/-/raw/master/png/aqua-divider.png)](#summary)
 
