@@ -41,9 +41,9 @@ We currently use this method to scaffold our projects of the following types:
 2. [Ansible](https://gitlab.com/megabyte-labs/documentation/ansible)
 3. [Dockerfile](https://gitlab.com/megabyte-labs/documentation/dockerfile)
 4. [Go](https://gitlab.com/megabyte-labs/documentation/go)
-4. [NPM](https://gitlab.com/megabyte-labs/documentation/npm)
-5. [Packer](https://gitlab.com/megabyte-labs/documentation/packer)
-6. [Python](https://gitlab.com/megabyte-labs/documentation/python)
+5. [NPM](https://gitlab.com/megabyte-labs/documentation/npm)
+6. [Packer](https://gitlab.com/megabyte-labs/documentation/packer)
+7. [Python](https://gitlab.com/megabyte-labs/documentation/python)
 
 [![-----------------------------------------------------](https://gitlab.com/megabyte-labs/assets/-/raw/master/png/aqua-divider.png)](#-repository-pipeline-order)
 
