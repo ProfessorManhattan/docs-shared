@@ -7,6 +7,8 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 <br/>
 <blockquote>
 <br/>
+Dear Lovely Person,
+
 {{ sponsorship.text }}
 <br/><br/>Sincerely,<br/><br/>
 
