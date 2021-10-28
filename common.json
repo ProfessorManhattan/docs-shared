@@ -34,6 +34,8 @@
     "terms": "https://megabyte.space/terms"
   },
   "name": "[[ package.json .blueprint.name - See CONTRIBUTING.md ]]",
+  "npm_private": false,
+  "npm_publish_config_access": "public",
   "misc": {
     "appnest": "https://github.com/andreasbm/readme",
     "husky": "https://www.npmjs.com/package/husky",
