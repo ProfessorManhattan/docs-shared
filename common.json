@@ -81,6 +81,7 @@
   "repository": {
     "github": "",
     "gitlab": "",
+    "gitlabBaseUrl": "https://gitlab.com/megabyte-labs",
     "group": {
       "ansible_roles": "https://gitlab.com/megabyte-labs/ansible-roles",
       "apps": "https://gitlab.com/megabyte-labs/apps",
