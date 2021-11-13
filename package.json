@@ -19,7 +19,7 @@
     "help": "task --list",
     "prepare": "task common:husky",
     "start": "bash .config/start.sh",
-    "test": "cp -rT .shared/common/ . && task upstream:commondocs"
+    "test": "cd .shared && git pull origin master && cd .. && cp -rT .shared/common/ . && task upstream:commondocs"
   },
   "config": {
     "commitizen": {
