@@ -15,7 +15,8 @@
     "header_description_post": "<i></i>",
     "header_description_pre": "<i></i>",
     "header_title_pre": "<i></i>",
-    "header_title_post": "<i></i>"
+    "header_title_post": "<i></i>",
+    "link": "https://megabyte.space/docs/common/shared"
   },
   "email": {
     "help": "help@megabyte.space"
