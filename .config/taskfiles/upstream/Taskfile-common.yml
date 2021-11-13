@@ -2,13 +2,14 @@
 version: '3'
 
 vars:
-  COMMON_FOLDER: .common
+  COMMON_FOLDER: '.common'
   DOCS_URL: https://gitlab.com/megabyte-labs/documentation/{{.REPOSITORY_SUBTYPE}}
   SHARED_COMMON_URL: https://gitlab.com/megabyte-labs/common/shared.git
-  SHARED_FOLDER: .shared
+  SHARED_FOLDER: '.shared'
 
 tasks:
   clean: rm -rf {{.SHARED_FOLDER}}
+
   clone:
     cmds:
       - task: clone:common
@@ -191,7 +192,7 @@ tasks:
       - |
         function handlebars() {
           FILE="$1"
-          {{.NPM_BINARY_HANDLE}}hbs --data .variables.json --helper ./.config/hbs.cjs "$FILE" --stdout > "${FILE//.hbs}"
+          {{.NPX_HANDLE}}hbs --data .variables.json --helper ./.config/hbs.cjs "$FILE" --stdout > "${FILE//.hbs}"
           rm "$FILE"
         }
         find . -type f -not \( -path './{{.COMMON_FOLDER}}*' -o -path './project*' -o -path './deprecated*' -o {{.IGNORE_FOLDERS}} \) -prune -name '*.hbs.*' | while read FILE; do
@@ -210,7 +211,7 @@ tasks:
       - |
         function handlebars() {
           FILE="$1"
-          {{.NPM_BINARY_HANDLE}}hbs --data .variables.json --helper ./.config/hbs.cjs "$FILE" --stdout > "${FILE%.*}"
+          {{.NPX_HANDLE}}hbs --data .variables.json --helper ./.config/hbs.cjs "$FILE" --stdout > "${FILE%.*}"
           rm "$FILE"
         }
         find . -type f -not \( -path './{{.COMMON_FOLDER}}*' -o -path './project*' -o -path './deprecated*' -o {{.IGNORE_FOLDERS}} \) -prune -name '*.handlebars' | while read FILE; do
