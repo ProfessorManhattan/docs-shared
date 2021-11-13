@@ -1,38 +1,19 @@
 {
-  "private": false,
-  "publishConfig": {
-    "access": "public"
-  },
-  "name": "{{#if customPackageName}}{{customPackageName}}{{else}}@{{profile.npmjs_organization}}/{{repository.prefix.github}}{{slug}}{{/if}}",
-  "description": "{{description}}",
-  "license": "{{license}}",
-  "author": "{{author.name}} <{{author.email}}> ({{link.home}})",
-  "homepage": "{{link.home}}",
-  "type": "module",
-  "repository": {
-    "type": "git",
-    "url": "git+{{#if repository.github}}{{repository.github}}{{else}}https://github.com/{{profile.github}}/{{repository.prefix.github}}{{slug}}{{/if}}.git"
+  "author": "Brian Zalewski <brian@megabyte.space> (https://megabyte.space)",
+  "blueprint": {
+    "description": "Documentation partials shared between project-type specific documentation partial repositories",
+    "name": "Shared Documentation",
+    "overview": "This repository contains documentation partials that are propagated downstream to project-type specific documentation partial repositories. For example, in this repository there may be a partial titled `contributing.md` which contains sponsorship links. When those links are updated, the partials in this repository are propagated to the project-type specific repositories (e.g. NPM package documentation, Dockerfile project documentation). The project-type specific documentation partials are then used by the projects that they are intended for. In this way, we can update all the links to Patreon across all of our repositories by editting in just one spot.",
+    "repository": {
+      "github": "https://github.com/ProfessorManhattan/docs-shared",
+      "gitlab": "https://gitlab.com/megabyte-labs/documentation/shared"
+    },
+    "slug": "docs-shared",
+    "title": "Shared Documentation Partials"
   },
   "bugs": {
-    "email": "{{email.help}}",
-    "url": "{{#if repository.gitlab}}{{repository.gitlab}}{{else}}{{repository.gitlabBaseUrl}}/{{group}}/{{subgroup}}/{{slug}}{{/if}}{{repository.location.issues.gitlab}}"
-  },
-  "version": "0.0.1",
-  "scripts": {
-    "help": "task --list",
-    "prepare": "task common:husky",
-    "start": "bash .config/start.sh"
-  },
-  "blueprint": {
-    "description": "An NPM package that is part of the Megabyte Labs eco-system",
-    "name": "My Project Name",
-    "overview": "This text shows up at the top of the README.md.",
-    "repository": {
-      "github": "{{#if repository.github}}{{repository.github}}{{else}}https://github.com/{{profile.github}}/{{repository.prefix.github}}{{slug}}{{/if}}",
-      "gitlab": "{{#if repository.gitlab}}{{repository.gitlab}}{{else}}{{repository.gitlabBaseUrl}}/{{group}}/{{subgroup}}/{{slug}}{{/if}}"
-    },
-    "slug": "my-project",
-    "title": "Title of the README.md"
+    "email": "help@megabyte.space",
+    "url": "{{#if repository.gitlab}}{{repository.gitlab}}{{else}}{{repository.gitlabBaseUrl}}/{{group}}/{{subgroup}}/{{slug}}{{/if}}/-/issues"
   },
   "config": {
     "commitizen": {
@@ -42,6 +23,7 @@
   "dependencies": {
     "tslib": "^2.3.1"
   },
+  "description": "An NPM package that is part of the Megabyte Labs eco-system",
   "devDependencies": {
     "@commitlint/config-conventional": "^13.1.0",
     "@megabytelabs/eslint-config": "^1.0.0",
@@ -60,19 +42,21 @@
   "funding": [
     {
       "type": "opencollective",
-      "url": "{{profile_link.opencollective}}/{{profile.opencollective}}"
+      "url": "https://opencollective.com/megabytelabs"
     },
     {
       "type": "patreon",
-      "url": "{{profile_link.patreon}}/{{profile.patreon}}"
+      "url": "https://www.patreon.com/ProfessorManhattan"
     }
   ],
+  "homepage": "https://megabyte.space",
   "keywords": [
     "megabytelabs",
-    "professormanhattan",
     "npm",
-    "package"
+    "package",
+    "professormanhattan"
   ],
+  "license": "MIT",
   "lint-staged": {
     "**/*": [
       "blocklint --wordlist blacklist,slave,whitelist",
@@ -84,12 +68,15 @@
     "**/*.(css|html|less|md|mjml|php|scss|sh|xml)": [
       "task fix:prettier --"
     ],
-    "**/*.json": [
-      "task fix:json --"
+    "**/*.(jpg|png)": [
+      "task image:compress --"
     ],
     "**/*.(js|jsx|ts|tsx)": [
       "task fix:js --",
       "task lint:js --"
+    ],
+    "**/*.json": [
+      "task fix:json --"
     ],
     "**/*.sh": [
       "task fix:shell --",
@@ -106,18 +93,31 @@
       "task fix:yaml --",
       "task lint:yaml --"
     ],
-    "**/*.(jpg|png)": [
-      "task image:compress --"
-    ],
     "logo.png": [
       "task image:resize -- 200 200",
       "task image:compress --"
     ]
   },
+  "name": "@megabytelabs/my-project",
   "prettier": "@megabytelabs/prettier-config",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+{{#if repository.github}}{{repository.github}}{{else}}https://github.com/{{profile.github}}/{{repository.prefix.github}}{{slug}}{{/if}}.git"
+  },
+  "scripts": {
+    "help": "task --list",
+    "prepare": "task common:husky",
+    "start": "bash .config/start.sh"
+  },
   "standard-version": {
     "scripts": {
       "prerelease": "git add --all"
     }
-  }
+  },
+  "type": "module",
+  "version": "0.0.1"
 }
