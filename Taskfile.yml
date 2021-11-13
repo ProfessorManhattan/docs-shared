@@ -1,23 +1,6 @@
 ---
 version: '3'
 
-output: interleaved
-
-vars:
-
-  GITHUB_ORG: ProfessorManhattan
-  GITHUB_USER: ProfessorManhattan
-  IGNORE_FOLDERS: -name .autodoc -o -name .cache -o -name .common -o -name .config -o -name .git -o -name .github
-    -o -name .gitlab -o -name .husky -o -name .modules -o -name .npm -o -name .pnpm-store -o -name .shared
-    -o -name .task -o -name .venv -o -name .vscode -o -name build -o -name dist -o -name node_modules -o -name venv
-    -o -path './.common*' -o -name pnpm-lock.yaml
-  NPM_PROGRAM: npm
-  NPX_HANDLE: ''
-  NPX_PACKAGE: npx
-  REPOSITORY_SUBTYPE: shared
-  REPOSITORY_TYPE: documentation
-  TIMEZONE: America/New_York
-
 includes:
   ansible: ./.config/taskfiles/ansible/Taskfile.yml
   ansible:ansibler: ./.config/taskfiles/ansible/Taskfile-ansibler.yml
@@ -59,6 +42,23 @@ includes:
   upstream:project: ./.config/taskfiles/upstream/Taskfile-project.yml
   upstream:shared: ./.config/taskfiles/upstream/Taskfile-shared.yml
   vscode: ./.config/taskfiles/Taskfile-vscode.yml
+
+output: interleaved
+
+vars:
+  GITHUB_ORG: ProfessorManhattan
+  GITHUB_USER: ProfessorManhattan
+  IGNORE_FOLDERS: -path './.autodoc/*' -o -path './.cache/*' -o -path './.common*' -o -path './.config/*' -o -path './.git/*'
+    -o -path './.github/*' -o -path './.gitlab/*' -o -path './.husky/*' -o -path './.modules/*' -o -path './.npm/*'
+    -o -path './.pnpm-store/*' -o -path './.shared/*' -o -path './.task/*' -o -path './.venv/*' -o -path './.vscode/*'
+    -o -path './build/*' -o -path './dist/*' -o -path './node_modules/*' -o -path './venv/*' -o -name pnpm-lock.yaml
+    -o -name package-lock.json -o -name poetry.lock -o -name '.variables.json'
+  NPM_PROGRAM: npm
+  NPX_HANDLE: ''
+  NPX_PACKAGE: npx
+  REPOSITORY_SUBTYPE: shared
+  REPOSITORY_TYPE: documentation
+  TIMEZONE: America/New_York
 
 tasks:
   donothing: 'true'

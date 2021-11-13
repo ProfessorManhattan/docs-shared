@@ -39,14 +39,14 @@
     "handlebars-helpers": "^0.10.0"
   },
   "keywords": [
+    "common",
+    "documentation",
     "megabytelabs",
     "npm",
     "package",
-    "professormanhattan",
-    "documentation",
     "partials",
-    "shared",
-    "common"
+    "professormanhattan",
+    "shared"
   ],
   "engines": {
     "node": ">=14"
@@ -56,6 +56,9 @@
   },
   "blueprint": {
     "description": "Documentation partials shared between project-type specific documentation partial repositories",
+    "docs": {
+      "link": "https://megabyte.space/docs/documentation/shared"
+    },
     "group": "documentation",
     "name": "Shared Documentation",
     "overview": "This repository contains documentation partials that are propagated downstream to project-type specific documentation partial repositories. For example, in this repository there may be a partial titled `contributing.md` which contains sponsorship links. When those links are updated, the partials in this repository are propagated to the project-type specific repositories (e.g. NPM package documentation, Dockerfile project documentation). The project-type specific documentation partials are then used by the projects that they are intended for. In this way, we can update all the links to Patreon across all of our repositories by editting in just one spot.",
