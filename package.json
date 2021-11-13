@@ -8,6 +8,8 @@
       "github": "https://github.com/ProfessorManhattan/docs-shared",
       "gitlab": "https://gitlab.com/megabyte-labs/documentation/shared"
     },
+    "group": "documentation",
+    "subgroup": "shared",
     "slug": "docs-shared",
     "title": "Shared Documentation Partials"
   },
