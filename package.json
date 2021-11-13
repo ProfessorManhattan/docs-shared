@@ -1,21 +1,25 @@
 {
+  "private": false,
+  "name": "@megabytelabs/docs-shared",
+  "version": "0.0.1",
+  "description": "Documentation partials shared between project-type specific documentation partial repositories",
+  "license": "MIT",
   "author": "Brian Zalewski <brian@megabyte.space> (https://megabyte.space)",
-  "blueprint": {
-    "description": "Documentation partials shared between project-type specific documentation partial repositories",
-    "name": "Shared Documentation",
-    "overview": "This repository contains documentation partials that are propagated downstream to project-type specific documentation partial repositories. For example, in this repository there may be a partial titled `contributing.md` which contains sponsorship links. When those links are updated, the partials in this repository are propagated to the project-type specific repositories (e.g. NPM package documentation, Dockerfile project documentation). The project-type specific documentation partials are then used by the projects that they are intended for. In this way, we can update all the links to Patreon across all of our repositories by editting in just one spot.",
-    "repository": {
-      "github": "https://github.com/ProfessorManhattan/docs-shared",
-      "gitlab": "https://gitlab.com/megabyte-labs/documentation/shared"
-    },
-    "group": "documentation",
-    "subgroup": "shared",
-    "slug": "docs-shared",
-    "title": "Shared Documentation Partials"
+  "homepage": "https://megabyte.space",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ProfessorManhattan/docs-shared.git"
   },
   "bugs": {
     "email": "help@megabyte.space",
-    "url": "{{#if repository.gitlab}}{{repository.gitlab}}{{else}}{{repository.gitlabBaseUrl}}/{{group}}/{{subgroup}}/{{slug}}{{/if}}/-/issues"
+    "url": "https://gitlab.com/megabyte-labs/documentation/shared/-/issues"
+  },
+  "type": "module",
+  "scripts": {
+    "help": "task --list",
+    "prepare": "task common:husky",
+    "start": "bash .config/start.sh",
+    "test": "cp -rT .shared/common/ . && task upstream:commondocs"
   },
   "config": {
     "commitizen": {
@@ -25,7 +29,6 @@
   "dependencies": {
     "tslib": "^2.3.1"
   },
-  "description": "An NPM package that is part of the Megabyte Labs eco-system",
   "devDependencies": {
     "@commitlint/config-conventional": "^13.1.0",
     "@megabytelabs/eslint-config": "^1.0.0",
@@ -35,11 +38,41 @@
     "cz-conventional-changelog": "^3.3.0",
     "handlebars-helpers": "^0.10.0"
   },
+  "keywords": [
+    "megabytelabs",
+    "npm",
+    "package",
+    "professormanhattan",
+    "documentation",
+    "partials",
+    "shared",
+    "common"
+  ],
   "engines": {
     "node": ">=14"
   },
+  "publishConfig": {
+    "access": "public"
+  },
+  "blueprint": {
+    "description": "Documentation partials shared between project-type specific documentation partial repositories",
+    "group": "documentation",
+    "name": "Shared Documentation",
+    "overview": "This repository contains documentation partials that are propagated downstream to project-type specific documentation partial repositories. For example, in this repository there may be a partial titled `contributing.md` which contains sponsorship links. When those links are updated, the partials in this repository are propagated to the project-type specific repositories (e.g. NPM package documentation, Dockerfile project documentation). The project-type specific documentation partials are then used by the projects that they are intended for. In this way, we can update all the links to Patreon across all of our repositories by editting in just one spot.",
+    "repository": {
+      "github": "https://github.com/ProfessorManhattan/docs-shared",
+      "gitlab": "https://gitlab.com/megabyte-labs/documentation/shared"
+    },
+    "slug": "docs-shared",
+    "subgroup": "shared",
+    "title": "Shared Documentation Partials"
+  },
   "eslintConfig": {
-    "extends": "@megabytelabs/eslint-config"
+    "extends": "@megabytelabs/eslint-config",
+    "rules": {
+      "import/no-extraneous-dependencies": "off",
+      "import/no-unresolved": "off"
+    }
   },
   "funding": [
     {
@@ -51,14 +84,6 @@
       "url": "https://www.patreon.com/ProfessorManhattan"
     }
   ],
-  "homepage": "https://megabyte.space",
-  "keywords": [
-    "megabytelabs",
-    "npm",
-    "package",
-    "professormanhattan"
-  ],
-  "license": "MIT",
   "lint-staged": {
     "**/*": [
       "blocklint --wordlist blacklist,slave,whitelist",
@@ -100,26 +125,10 @@
       "task image:compress --"
     ]
   },
-  "name": "@megabytelabs/my-project",
   "prettier": "@megabytelabs/prettier-config",
-  "private": false,
-  "publishConfig": {
-    "access": "public"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+{{#if repository.github}}{{repository.github}}{{else}}https://github.com/{{profile.github}}/{{repository.prefix.github}}{{slug}}{{/if}}.git"
-  },
-  "scripts": {
-    "help": "task --list",
-    "prepare": "task common:husky",
-    "start": "bash .config/start.sh"
-  },
   "standard-version": {
     "scripts": {
       "prerelease": "git add --all"
     }
-  },
-  "type": "module",
-  "version": "0.0.1"
+  }
 }
