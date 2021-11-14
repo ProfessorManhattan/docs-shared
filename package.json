@@ -1,6 +1,6 @@
 {
   "private": false,
-  "name": "@megabytelabs/docs-shared",
+  "name": "@mblabs/docs-shared",
   "version": "0.0.1",
   "description": "Documentation partials shared between project-type specific documentation partial repositories",
   "license": "MIT",
