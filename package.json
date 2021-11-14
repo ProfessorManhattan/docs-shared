@@ -18,8 +18,7 @@
   "scripts": {
     "help": "task --list",
     "prepare": "task common:husky",
-    "start": "bash .config/start.sh",
-    "test": "cd .shared && git pull origin master && cd .. && cp -rT .shared/common/ . && task upstream:commondocs"
+    "start": "bash .config/start.sh"
   },
   "config": {
     "commitizen": {
@@ -33,6 +32,7 @@
     "@commitlint/config-conventional": "^13.1.0",
     "@mblabs/eslint-config": "^1.0.0",
     "@mblabs/prettier-config": "^14.14.14",
+    "@types/node": "^16.11.7",
     "@typescript-eslint/eslint-plugin": "^5.2.0",
     "cz-conventional-changelog": "^3.3.0",
     "handlebars-helpers": "^0.10.0"
