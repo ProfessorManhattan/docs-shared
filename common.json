@@ -40,7 +40,6 @@
     "tinypng": "https://tinypng.com/"
   },
   "name": "[[ package.json .blueprint.name - See CONTRIBUTING.md ]]",
-  "npm_private": false,
   "npm_publish_config_access": "public",
   "npm_scripts_help": "task --list",
   "npm_scripts_prepare": "task common:husky",
