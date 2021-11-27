@@ -117,7 +117,8 @@
     "location": {
       "commits": {
         "github": "/commits/master",
-        "gitlab": "/-/commits/master"
+        "gitlab": "/-/commits/master",
+        "gitlab_e2e": "/-/commits/e2e"
       },
       "conduct": {
         "github": "/blob/master/CODE_OF_CONDUCT.md",
