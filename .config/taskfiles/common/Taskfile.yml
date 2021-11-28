@@ -28,17 +28,13 @@ tasks:
           fi
         done
         wait
-    # log:
-    #   error: Error encountered while cleaning up the optional folders
-    #   start: Cleaning up the project by removing caches etc.
-    #   success: Finished cleaning up optional folders
 
   commit:
     deps:
-      - :install:local:modules
+      - :install:modules:local
       - :install:npm:commitizen
       - :install:npm:commitlint
-      - python:requirements
+      - :install:python:requirements
     desc: Lint staged files, report spelling errors, and open a _required_ commit dialoge
     summary: |
       # Commit code
@@ -59,7 +55,7 @@ tasks:
 
   husky:
     deps:
-      - :install:local:modules
+      - :install:modules:local
       - :install:npm:commitizen
       - :install:npm:commitlint
       - :install:npm:husky
@@ -106,24 +102,6 @@ tasks:
         vars:
           FILE: .config/husky/prepare-commit-msg
 
-  node:dependencies:global:
-    run: once
-    cmds:
-      - task: :install:npm:commitizen
-      - task: :install:npm:commitlint
-      - task: :install:npm:cspell
-      - task: :install:npm:eslint
-      - task: :install:npm:hbs
-      - task: :install:npm:husky
-      - task: :install:npm:lint-staged
-      - task: :install:npm:prettier
-      - task: :install:npm:readme
-      - task: :install:npm:remark
-      - task: :install:npm:shellcheck
-      - task: :install:npm:standard-version
-    status:
-      - '[[ "${container:=}" == "docker" ]]'
-
   precommit:
     deps:
       - :fix:json
@@ -151,9 +129,9 @@ tasks:
 
   requirements:
     deps:
-      - :install:local:modules
-      - node:dependencies:global
-      - python:requirements
+      - :install:modules:global
+      - :install:modules:local
+      - :install:python:requirements
     desc: Ensure all the dependencies are installed (Node.js, Python, etc.)
     summary: |
       # Ensure dependencies are installed
@@ -226,19 +204,27 @@ tasks:
       * ubuntu-18.04
       * ubuntu-20.04
       * ubuntu-21.04
+    cmds:
+      - task: shell:{{if .CLI_ARGS}}cli{{else}}prompt{{end}}
+
+  shell:cli:
+    vars:
+      WORKDIR:
+        sh: basename $PWD
+    cmds:
+      - docker run --cap-drop=ALL -it -v "$PWD:/{{.WORKDIR}}" -w /{{.WORKDIR}} --rm megabytelabs/ansible-molecule-{{.CLI_ARGS}}:latest /bin/bash
+
+  shell:prompt:
+    deps:
+      - :install:modules:prompt
+    interactive: true
     vars:
       WORKDIR:
         sh: basename $PWD
     cmds:
       - |
-        {{if .CLI_ARGS}}
-          docker run --cap-drop=ALL -it -v "$PWD:/{{.WORKDIR}}" -w /{{.WORKDIR}} --rm megabytelabs/ansible-molecule-{{.CLI_ARGS}}:latest /bin/bash
-        {{else}}
-          node .config/scripts/prompts/shell.js
-        {{end}}
-    preconditions:
-      - sh: 'type docker &> /dev/null'
-        msg: Docker is not installed.
+        CHOICE="$(node .config/scripts/prompts/shell.js)"
+        docker run --cap-drop=ALL -it -v "$PWD:/{{.WORKDIR}}" -w /{{.WORKDIR}} --rm "megabytelabs/ansible-molecule-$CHOICE:latest" /bin/bash
 
   update:
     deps:
