@@ -109,6 +109,7 @@
       "packer_path": "megabyte-labs/packer",
       "python": "https://gitlab.com/megabyte-labs/python",
       "python_path": "megabyte-labs/python",
+      "python_cli_path": "megabyte-labs/python/cli",
       "software": "https://gitlab.com/megabyte-labs/software",
       "software_path": "megabyte-labs/software",
       "web_components": "https://gitlab.com/megabyte-labs/web-components",
