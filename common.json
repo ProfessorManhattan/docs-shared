@@ -154,7 +154,7 @@
     "project": {
       "assets": "https://gitlab.com/megabyte-labs/assets/-/raw/master",
       "autodoc": "https://github.com/AndresBott/ansible-autodoc",
-      "playbooks": "https://gitlab.com/InstallDoc/ansible-playbook-boilerplate",
+      "playbooks": "https://github.com/ProfessorManhattan/Gas-Station",
       "wrangler": "https://gitlab.com/megabyte-labs/wrangler"
     }
   },
