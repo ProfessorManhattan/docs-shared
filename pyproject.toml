@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "docs-shared"
 version = "0.0.1"
-description = "Documentation partials shared between project-type specific documentation partial repositories"
+description = "Documentation partials shared between project documentation partial repositories"
 authors = ["Brian Zalewski <brian@megabyte.space>"]
 license = "MIT"
 readme = "README.md"
