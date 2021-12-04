@@ -161,6 +161,7 @@
     }
   },
   "commit_help_url": "https://megabyte.space/docs/contributing/commit-guidelines",
+  "SPACE": "",
   "sharp_instructions": [],
   "sponsorship": {
     "author": "Brian Zalewski",
