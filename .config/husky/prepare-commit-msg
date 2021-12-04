@@ -7,7 +7,9 @@
 # @arg $2 string The type of the `prepare-commit-msg` event. For a `git pull origin master`
 # command, the event type is 'merge'.
 
+chmod +x .config/log
+
 if [ "$2" != 'merge' ]; then
-  . .config/log info 'Opening a _git commit_ dialog'
+  .config/log info 'Opening a `git commit` dialog'
   exec < /dev/tty && pnpx git-cz --hook || true
 fi
