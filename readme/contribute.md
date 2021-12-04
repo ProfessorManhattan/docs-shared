@@ -1,6 +1,6 @@
 ## Contributing
 
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page]({{ repository.github }}{{ repository.location.issues.github }}). If you would like to contribute, please take a look at the [contributing guide]({{ repository.github }}{{ repository.location.contributing.github }}).
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page]({{ repository.github }}{{ repository.location.issues.github }}). If you would like to contribute, please take a look at the [contributing guide]({{ repository.github }}{{ repository.location.contributing.github }}). We are looking to collaborate!
 
 <details>
 <summary><b>Sponsorship</b></summary>
