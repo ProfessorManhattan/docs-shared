@@ -160,7 +160,7 @@
       "wrangler": "https://gitlab.com/megabyte-labs/wrangler"
     }
   },
-  "commit_help_url": "https://megabyte.space/docs/contributing/commit-guidelines"
+  "commit_help_url": "https://megabyte.space/docs/contributing/commit-guidelines",
   "sharp_instructions": [],
   "sponsorship": {
     "author": "Brian Zalewski",
