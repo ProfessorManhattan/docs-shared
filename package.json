@@ -64,7 +64,7 @@
     "gitlab_group_id": "11096751",
     "gitlab_project_id": "27548086",
     "group": "documentation",
-    "name": "Shared",
+    "name": "Shared Docs",
     "overview": "This repository contains documentation partials that are propagated downstream to project-type specific documentation partial repositories. For example, in this repository there may be a partial titled `contributing.md` which contains sponsorship links. When those links are updated, the partials in this repository are propagated to the project-type specific repositories (e.g. NPM package documentation, Dockerfile project documentation). The project-type specific documentation partials are then used by the projects that they are intended for. In this way, we can update all the links to Patreon across all of our repositories by editting in just one spot.",
     "repository": {
       "github": "https://github.com/ProfessorManhattan/docs-shared",
