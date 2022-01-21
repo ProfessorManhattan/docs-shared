@@ -66,6 +66,7 @@
   "overview": "[[ This is a new repository without the details filled in yet. Look for the section about blueprint data in the CONTRIBUTING.md to set up the project. ]]",
   "profile": {
     "dockerhub": "megabytelabs",
+    "dockerHubUser": "professormanhattan",
     "galaxy": "professormanhattan",
     "github": "ProfessorManhattan",
     "linkedin": "blzalewski",
