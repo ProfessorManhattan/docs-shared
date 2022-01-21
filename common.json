@@ -24,52 +24,6 @@
   "email": {
     "help": "help@megabyte.space"
   },
-  "releaseRules": [
-				{
-					"type": "build",
-					"release": "patch"
-				},
-				{
-					"type": "ci",
-					"release": "patch"
-				},
-				{
-					"type": "chore",
-					"release": false
-				},
-				{
-					"type": "docs",
-					"release": false
-				},
-        {
-          "type": "fix",
-          "release": "patch"
-        },
-        {
-          "type": "feat",
-          "release": "minor"
-        },
-				{
-					"type": "refactor",
-					"release": "patch"
-				},
-        {
-          "type": "revert",
-          "release": "patch"
-        },
-        {
-          "type": "perf",
-          "release": "patch"
-        },
-				{
-					"type": "style",
-					"release": false
-				},
-				{
-					"type": "test",
-					"release": false
-				}
-			],
   "emoji_beginnings": ["🚀 ", "🔥👉 ", "👉 ", "😉 ", "🆓 ", "🐴 ", "👀 ", "🎉 ", "", "", "", "", "", "", "", ""],
   "emoji_endings": [" 🚀", " 🔥🔥🔥", " 👏", " 😉", " 🐙", " 🐴", " 👀", " 🎟", " 🎉🎉", "", "", "", "", "", "", ""],
   "github_prefix": "<i></i>",
@@ -139,6 +93,52 @@
     "twitter": "MegabyteLabs",
     "vagrant": "https://app.vagrantup.com"
   },
+  "releaseRules": [
+    {
+      "release": "patch",
+      "type": "build"
+    },
+    {
+      "release": "patch",
+      "type": "ci"
+    },
+    {
+      "release": false,
+      "type": "chore"
+    },
+    {
+      "release": false,
+      "type": "docs"
+    },
+    {
+      "release": "patch",
+      "type": "fix"
+    },
+    {
+      "release": "minor",
+      "type": "feat"
+    },
+    {
+      "release": "patch",
+      "type": "refactor"
+    },
+    {
+      "release": "patch",
+      "type": "revert"
+    },
+    {
+      "release": "patch",
+      "type": "perf"
+    },
+    {
+      "release": false,
+      "type": "style"
+    },
+    {
+      "release": false,
+      "type": "test"
+    }
+  ],
   "repository": {
     "github": "",
     "gitlab": "",
