@@ -42,7 +42,7 @@
   "homebrew": {
     "folder": "Formula",
     "name": "homebrew-tap",
-    "owner": "installdoc",
+    "owner": "installdoc"
   },
   "idPost": "megabyte.space",
   "json_top_keys": "",
