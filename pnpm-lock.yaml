@@ -2,12 +2,12 @@ lockfileVersion: 5.3
 
 specifiers:
   '@commitlint/config-conventional': ^16.0.0
-  '@washingtondc/development': ^1.0.0
+  '@washingtondc/development': latest
   cz-emoji-conventional: ^1.0.1
-  eslint-config-strict-mode: ^1.0.28
+  eslint-config-strict-mode: latest
   handlebars-helpers: ^0.10.0
-  prettier-config-sexy-mode: ^1.0.0
-  semantic-release-config: ^0.0.16
+  prettier-config-sexy-mode: latest
+  semantic-release-config: latest
 
 devDependencies:
   '@commitlint/config-conventional': 16.0.0
@@ -15,7 +15,7 @@ devDependencies:
   cz-emoji-conventional: 1.0.1
   eslint-config-strict-mode: 1.0.31
   handlebars-helpers: 0.10.0
-  prettier-config-sexy-mode: 1.0.0
+  prettier-config-sexy-mode: 1.0.1
   semantic-release-config: 0.0.16
 
 packages:
@@ -2532,11 +2532,6 @@ packages:
     resolution: {integrity: sha1-ZlWX3oap/+Oqm/vmyuXG6kJrSXk=}
     dev: true
 
-  /antlr4/4.9.3:
-    resolution: {integrity: sha512-qNy2odgsa0skmNMCuxzXhM4M8J1YDaPv3TI+vCdnOAanu0N982wBrSqziDKRDctEZLZy9VffqIZXc0UGjjSP/g==}
-    engines: {node: '>=14'}
-    dev: true
-
   /antlr4ts/0.5.0-alpha.4:
     resolution: {integrity: sha512-WPQDt1B74OfPv/IMS2ekXAKkTZIHl88uMetg6q3OTqgFxZ/dxDXI0EWLyZid/1Pe6hTftyg5N7gel5wNAGxXyQ==}
     dev: true
@@ -4497,7 +4492,7 @@ packages:
       pino: 6.7.0
       request: 2.88.2
       sha.js: 2.4.11
-      source-map-support: 0.5.19
+      source-map-support: 0.5.21
       yargs: 16.1.1
     dev: true
 
@@ -10380,8 +10375,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /prettier-config-sexy-mode/1.0.0:
-    resolution: {integrity: sha512-9+i9UbwMo09M+hOVRDd0ZNJeKVbKk+AkNvnsHv15MfUMwjWPWmMg0lno3J5YCiJHre47sbtdiVSgThCjDbkrTw==}
+  /prettier-config-sexy-mode/1.0.1:
+    resolution: {integrity: sha512-6ZdAv6LW2vq++c5fqoh2MWrIZk9fi67o608xizEPYKPMjGUNDsqjJ/pYiJLp7yDHgGerEERc4bRQqlh8a9W6YA==}
     engines: {node: '>=14.18.0'}
     dependencies:
       '@prettier/plugin-php': 0.17.6_prettier@2.5.1
@@ -10389,7 +10384,6 @@ packages:
       '@prettier/plugin-ruby': 2.0.0
       '@prettier/plugin-xml': 1.2.0
       prettier: 2.5.1
-      prettier-plugin-csharp: 0.6.0-development
       prettier-plugin-go-template: 0.0.11_prettier@2.5.1
       prettier-plugin-ini: 0.3.1
       prettier-plugin-java: 1.6.1
@@ -10425,15 +10419,6 @@ packages:
       parse-author: 2.0.0
       sort-object-keys: 1.1.3
       sort-order: 1.0.1
-    dev: true
-
-  /prettier-plugin-csharp/0.6.0-development:
-    resolution: {integrity: sha512-YFQvAFHzxtN7kTYgJNHpAT7T/h5SoKeVovYOWe+vReMeawEA91R+6nZ5+ahrE6xF8WD+Rtts5WTkrF7zgYMh7w==}
-    dependencies:
-      antlr4: 4.9.3
-      is-alphanumerical: 1.0.4
-      lodash: 4.17.21
-      prettier: 1.19.1
     dev: true
 
   /prettier-plugin-go-template/0.0.11_prettier@2.5.1:
@@ -10532,12 +10517,6 @@ packages:
       node-sql-parser: 4.0.8
       prettier: 2.5.1
       sql-formatter: 4.0.2
-    dev: true
-
-  /prettier/1.19.1:
-    resolution: {integrity: sha512-s7PoyDv/II1ObgQunCbB9PdLmUcBZcnWOcxDh7O0N/UwDEsHyqkW+Qh28jW+mVuCdx7gLB0BotYI1Y6uI9iyew==}
-    engines: {node: '>=4'}
-    hasBin: true
     dev: true
 
   /prettier/2.3.1:

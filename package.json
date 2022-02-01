@@ -1,5 +1,64 @@
 {
+  "private": false,
+  "name": "@mblabs/docs-shared",
+  "version": "0.0.1",
+  "description": "Documentation partials shared between project documentation partial repositories",
+  "license": "MIT",
   "author": "Brian Zalewski <brian@megabyte.space> (https://megabyte.space)",
+  "homepage": "https://megabyte.space",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ProfessorManhattan/docs-shared.git"
+  },
+  "bugs": {
+    "email": "help@megabyte.space",
+    "url": "https://gitlab.com/megabyte-labs/documentation/shared/-/issues"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "task donothing",
+    "help": "task --menu",
+    "prepare": "task common:husky",
+    "repair": "bash <(curl -sS https://install.doctor/repair)",
+    "setup": "",
+    "start": "bash start.sh",
+    "test": "task donothing"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-emoji-conventional"
+    }
+  },
+  "dependencies": {},
+  "optionalDependencies": {},
+  "devDependencies": {
+    "@commitlint/config-conventional": "^16.0.0",
+    "@washingtondc/development": "latest",
+    "cz-emoji-conventional": "^1.0.1",
+    "eslint-config-strict-mode": "latest",
+    "handlebars-helpers": "^0.10.0",
+    "prettier-config-sexy-mode": "latest",
+    "semantic-release-config": "latest"
+  },
+  "keywords": [
+    "common",
+    "docs",
+    "documentation",
+    "mblabs",
+    "megabytelabs",
+    "npm",
+    "package",
+    "partials",
+    "professormanhattan",
+    "shared",
+    "washingtondc"
+  ],
+  "engines": {
+    "node": ">=14.18.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "blueprint": {
     "description": "Documentation partials shared between project documentation partial repositories",
     "docs": {
@@ -19,10 +78,6 @@
     "subgroup": "shared",
     "title": "Shared Documentation Partials"
   },
-  "bugs": {
-    "email": "help@megabyte.space",
-    "url": "https://gitlab.com/megabyte-labs/documentation/shared/-/issues"
-  },
   "changelog": {
     "displayTypes": [
       "feat",
@@ -39,32 +94,8 @@
     ],
     "helpUrl": "https://megabyte.space/docs/contributing/commits"
   },
-  "config": {
-    "commitizen": {
-      "path": "node_modules/cz-emoji-conventional"
-    }
-  },
-  "dependencies": {},
-  "description": "Documentation partials shared between project documentation partial repositories",
-  "devDependencies": {
-    "@commitlint/config-conventional": "^16.0.0",
-    "@washingtondc/development": "^1.0.0",
-    "cz-emoji-conventional": "^1.0.1",
-    "eslint-config-strict-mode": "^1.0.28",
-    "handlebars-helpers": "^0.10.0",
-    "prettier-config-sexy-mode": "^1.0.0",
-    "semantic-release-config": "^0.0.16"
-  },
-  "engines": {
-    "node": ">=14.18.0"
-  },
   "eslintConfig": {
-    "extends": "eslint-config-strict-mode",
-    "rules": {
-      "import/no-extraneous-dependencies": "warn",
-      "max-len": "warn",
-      "max-lines": "warn"
-    }
+    "extends": "eslint-config-strict-mode"
   },
   "funding": [
     {
@@ -76,21 +107,6 @@
       "url": "https://www.patreon.com/ProfessorManhattan"
     }
   ],
-  "homepage": "https://megabyte.space",
-  "keywords": [
-    "common",
-    "docs",
-    "documentation",
-    "mblabs",
-    "megabytelabs",
-    "npm",
-    "package",
-    "partials",
-    "professormanhattan",
-    "shared",
-    "washingtondc"
-  ],
-  "license": "MIT",
   "lint-staged": {
     "**/!(logo).(jpg|png)": [
       "task image:compress --"
@@ -127,7 +143,6 @@
       "task image:compress --"
     ]
   },
-  "name": "@mblabs/docs-shared",
   "ntl": {
     "descriptions": {
       "build": "Builds the project, if needed",
@@ -138,12 +153,7 @@
       "test": "Runs the appropriate test logic"
     }
   },
-  "optionalDependencies": {},
   "prettier": "prettier-config-sexy-mode",
-  "private": false,
-  "publishConfig": {
-    "access": "public"
-  },
   "release": {
     "branches": [
       "main",
@@ -159,20 +169,5 @@
       }
     ],
     "extends": "semantic-release-config"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ProfessorManhattan/docs-shared.git"
-  },
-  "scripts": {
-    "build": "task donothing",
-    "help": "task --menu",
-    "prepare": "task common:husky",
-    "repair": "bash <(curl -sS https://install.doctor/repair)",
-    "setup": "",
-    "start": "bash start.sh",
-    "test": "task donothing"
-  },
-  "type": "module",
-  "version": "0.0.1"
+  }
 }
