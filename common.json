@@ -8,6 +8,8 @@
   "autodoc_actions_description": "",
   "autodoc_tags_description": "",
   "autodoc_todo_description": "",
+  "slackNotificationUsername": "Megabyte Labs Release Notification Bot",
+  "slackNotificationChannel": "#misc",
   "autodoc_variables_description": "",
   "badge_style": "for-the-badge",
   "commit_help_url": "https://megabyte.space/docs/contributing/commit-guidelines",
