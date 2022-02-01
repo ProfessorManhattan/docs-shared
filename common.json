@@ -97,6 +97,8 @@
     "twitter": "MegabyteLabs",
     "vagrant": "https://app.vagrantup.com"
   },
+  "redditApplicationId": "O3UxD7HlPpcN88gpEkPIXQ",
+  "redditUsername": "tsgangster",
   "releaseRules": [
     {
       "release": false,
