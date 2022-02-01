@@ -1,61 +1,5 @@
 {
-  "private": false,
-  "name": "@mblabs/docs-shared",
-  "version": "0.0.1",
-  "description": "Documentation partials shared between project documentation partial repositories",
-  "license": "MIT",
   "author": "Brian Zalewski <brian@megabyte.space> (https://megabyte.space)",
-  "homepage": "https://megabyte.space",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ProfessorManhattan/docs-shared.git"
-  },
-  "bugs": {
-    "email": "help@megabyte.space",
-    "url": "https://gitlab.com/megabyte-labs/documentation/shared/-/issues"
-  },
-  "type": "module",
-  "scripts": {
-    "help": "",
-    "prepare": "",
-    "repair": "bash <(curl -sS https://install.doctor/repair)",
-    "setup": "",
-    "start": ""
-  },
-  "config": {
-    "commitizen": {
-      "path": "node_modules/cz-emoji-conventional"
-    }
-  },
-  "dependencies": {},
-  "optionalDependencies": {},
-  "devDependencies": {
-    "@washingtondc/development": "^1.0.2",
-    "@washingtondc/prettier": "^1.0.0",
-    "@washingtondc/release": "^0.0.2",
-    "eslint-config-strict-mode": "^1.0.28",
-    "semantic-release-config": "^0.0.12",
-    "sleekfast": "^0.0.1"
-  },
-  "keywords": [
-    "common",
-    "docs",
-    "documentation",
-    "mblabs",
-    "megabytelabs",
-    "npm",
-    "package",
-    "partials",
-    "professormanhattan",
-    "shared",
-    "washingtondc"
-  ],
-  "engines": {
-    "node": ">=14.18.0"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
   "blueprint": {
     "description": "Documentation partials shared between project documentation partial repositories",
     "docs": {
@@ -75,6 +19,10 @@
     "subgroup": "shared",
     "title": "Shared Documentation Partials"
   },
+  "bugs": {
+    "email": "help@megabyte.space",
+    "url": "https://gitlab.com/megabyte-labs/documentation/shared/-/issues"
+  },
   "changelog": {
     "displayTypes": [
       "feat",
@@ -90,6 +38,25 @@
       "@commitlint/config-conventional"
     ],
     "helpUrl": "https://megabyte.space/docs/contributing/commits"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-emoji-conventional"
+    }
+  },
+  "dependencies": {},
+  "description": "Documentation partials shared between project documentation partial repositories",
+  "devDependencies": {
+    "@commitlint/config-conventional": "^16.0.0",
+    "@washingtondc/development": "^1.0.0",
+    "cz-emoji-conventional": "^1.0.1",
+    "eslint-config-strict-mode": "^1.0.28",
+    "handlebars-helpers": "^0.10.0",
+    "prettier-config-sexy-mode": "^1.0.0",
+    "semantic-release-config": "^0.0.16"
+  },
+  "engines": {
+    "node": ">=14.18.0"
   },
   "eslintConfig": {
     "extends": "eslint-config-strict-mode",
@@ -109,6 +76,21 @@
       "url": "https://www.patreon.com/ProfessorManhattan"
     }
   ],
+  "homepage": "https://megabyte.space",
+  "keywords": [
+    "common",
+    "docs",
+    "documentation",
+    "mblabs",
+    "megabytelabs",
+    "npm",
+    "package",
+    "partials",
+    "professormanhattan",
+    "shared",
+    "washingtondc"
+  ],
+  "license": "MIT",
   "lint-staged": {
     "**/!(logo).(jpg|png)": [
       "task image:compress --"
@@ -118,9 +100,6 @@
     ],
     "**/*.(css|html|less|md|mjml|php|scss|sh|xml)": [
       "task fix:prettier --"
-    ],
-    "**/*.(jpg|png)": [
-      "task image:compress --"
     ],
     "**/*.(js|jsx|ts|tsx)": [
       "task fix:js --",
@@ -148,15 +127,23 @@
       "task image:compress --"
     ]
   },
+  "name": "@mblabs/docs-shared",
   "ntl": {
     "descriptions": {
+      "build": "Builds the project, if needed",
       "help": "Display the Bodega Taskfile.yml interactive help menu",
       "prepare": "Hook, triggered by running npm install, that runs logic such as installing pre-commit hooks",
       "repair": "Fixes basic issues in projects that are having trouble running basic commands like 'task start'",
-      "start": "Entrypoint for new developers that installs requirements and then runs 'task start'"
+      "start": "Entrypoint for new developers that installs requirements and then runs 'task start'",
+      "test": "Runs the appropriate test logic"
     }
   },
-  "prettier": "@washingtondc/prettier",
+  "optionalDependencies": {},
+  "prettier": "prettier-config-sexy-mode",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "release": {
     "branches": [
       "main",
@@ -172,5 +159,20 @@
       }
     ],
     "extends": "semantic-release-config"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ProfessorManhattan/docs-shared.git"
+  },
+  "scripts": {
+    "build": "task donothing",
+    "help": "task --menu",
+    "prepare": "task common:husky",
+    "repair": "bash <(curl -sS https://install.doctor/repair)",
+    "setup": "",
+    "start": "bash start.sh",
+    "test": "task donothing"
+  },
+  "type": "module",
+  "version": "0.0.1"
 }
