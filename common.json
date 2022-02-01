@@ -10,6 +10,7 @@
   "autodoc_todo_description": "",
   "slackNotificationUsername": "Megabyte Labs Release Notification Bot",
   "slackNotificationChannel": "#misc",
+  "slackNotificationIcon": "https://gitlab.com/megabyte-labs/misc/assets/-/raw/master/logo/megabytelabs-color-icon-350x350.png",
   "autodoc_variables_description": "",
   "badge_style": "for-the-badge",
   "commit_help_url": "https://megabyte.space/docs/contributing/commit-guidelines",
