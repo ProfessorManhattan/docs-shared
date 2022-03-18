@@ -209,6 +209,113 @@
   "subgroup": "[[ Needs to be setup. Set this in the common repository for this type of project ]]",
   "teamsNotificationColor": "#1DA1F2",
   "teamsNotificationIcon": "https://gitlab.com/megabyte-labs/misc/assets/-/raw/master/logo/megabytelabs-color-icon-350x350.png",
+  "newProjectTemplates": {
+    "angular-app": {
+      "title": "Angular App",
+      "group": "angular",
+      "subgroup": "app"
+    },
+    "angular-website": {
+      "title": "Angular Website",
+      "group": "angular",
+      "subgroup": "website"
+    },
+    "ansible-role": {
+      "title": "Ansible Role",
+      "group": "ansible",
+      "subgroup": "role"
+    },
+    "docker-app": {
+      "title": "Dockerfile (App)",
+      "group": "docker",
+      "subgroup": "app"
+    },
+    "docker-ci-pipeline": {
+      "title": "CI/CD Pipeline Dockerfile",
+      "group": "docker",
+      "subgroup": "ci-pipeline"
+    },
+    "docker-codeclimate": {
+      "title": "CodeClimate Engine / Linter Dockerfile",
+      "group": "docker",
+      "subgroup": "codeclimate"
+    },
+    "docker-docker-compose": {
+      "title": "Docker Compose",
+      "group": "docker",
+      "subgroup": "docker-compose"
+    },
+    "go-cli": {
+      "title": "Go CLI",
+      "group": "go",
+      "subgroup": "cli"
+    },
+    "go-library": {
+      "title": "Go Library",
+      "group": "go",
+      "subgroup": "library"
+    },
+    "misc": {
+      "title": "Miscellaneous project",
+      "group": "misc",
+      "subgroup": "misc"
+    },
+    "npm-app": {
+      "title": "Node.js App",
+      "group": "npm",
+      "subgroup": "app"
+    },
+    "npm-cli": {
+      "title": "Node.js CLI",
+      "group": "npm",
+      "subgroup": "cli"
+    },
+    "npm-configs": {
+      "title": "NPM Config Package",
+      "group": "npm",
+      "subgroup": "configs"
+    },
+    "npm-library": {
+      "title": "Node.js Library",
+      "group": "npm",
+      "subgroup": "library"
+    },
+    "npm-plugin": {
+      "title": "NPM Plugin",
+      "group": "npm",
+      "subgroup": "plugin"
+    },
+    "npm-web-component": {
+      "title": "Web Component",
+      "group": "npm",
+      "subgroup": "web-component"
+    },
+    "packer-desktop": {
+      "title": "Packer (Desktop)",
+      "group": "packer",
+      "subgroup": "desktop"
+    },
+    "packer-server": {
+      "title": "Packer (Server)",
+      "group": "packer",
+      "subgroup": "server"
+    },
+    "python-cli": {
+      "title": "Python CLI",
+      "group": "python",
+      "subgroup": "cli"
+    },
+    "python-library": {
+      "title": "Python Library",
+      "group": "python",
+      "subgroup": "library"
+    },
+    "website": {
+      "title": "Website",
+      "group": "npm",
+      "subgroup": "website"
+    }
+  },
   "title": "[[ package.json .blueprint.title - See CONTRIBUTING.md ]]",
   "version": "0.0.1"
 }
