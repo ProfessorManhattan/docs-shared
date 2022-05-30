@@ -29,4 +29,6 @@ Dear Beautiful, Awesome Person,<br/><br/>
 
 **Affiliate Sponsors**
 
-[![Digital Ocean Badge](https://web-platforms.sfo2.digitaloceanspaces.com/WWW/Badge%203.svg)](https://www.digitalocean.com/?refcode=751743d45e36&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge)
+[![Digital Ocean, the cheap, performant, and simple cloud hosting provider](https://web-platforms.sfo2.digitaloceanspaces.com/WWW/Badge%203.svg)](https://www.digitalocean.com/?refcode=751743d45e36&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge)
+[![Hire freelancers starting at $5 on Fiverr](https://gitlab.com/megabyte-labs/misc/assets/-/raw/master/png/fiverr.png)](http://www.fiverr.com/s2/2b9456ae92)
+[![Visible, the $25/month unlimited cellular provider](https://gitlab.com/megabyte-labs/misc/assets/-/raw/master/png/visible.png)](https://www.visible.com/get/?3JMZG3W)
