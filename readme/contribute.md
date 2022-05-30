@@ -26,3 +26,7 @@ Dear Beautiful, Awesome Person,<br/><br/>
 </a>
 
 </details>
+
+**Affiliate Sponsors**
+
+[![Digital Ocean Badge](https://web-platforms.sfo2.digitaloceanspaces.com/WWW/Badge%203.svg)](https://www.digitalocean.com/?refcode=751743d45e36&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge)
