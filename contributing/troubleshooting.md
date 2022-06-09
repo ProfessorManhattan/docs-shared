@@ -1,0 +1,3 @@
+## Troubleshooting
+
+If you are experiencing issues setting up the project (i.e. running `bash start.sh`, `task start`, or `task update`) then you can take advantage of the `.devcontainer/` configuration we keep inside of each repository. The `.devcontainer/` spec defines a Docker-based, portable development environment. It was introduced by Microsoft and is currently available to paying customers on GitHub. However, you can also use it for **free** on your local machine. [Follow the instructions in this guide](https://code.visualstudio.com/docs/remote/containers-tutorial) to run a pre-configured development environment if you are experiencing issues.
