@@ -4,32 +4,32 @@ version: '3'
 env:
   RELEASE_ANSIBLE:
     sh: |
-      if [ '{{.REPOSITORY_TYPE}}' == 'ansible' ] && [ '{{.REPOSITORY_SUBTYPE}}' == 'role' ]; then
+      if [[ '{{.REPOSITORY_TYPE}}' == 'ansible' ]] && [[ '{{.REPOSITORY_SUBTYPE}}' == 'role' ]]; then
         echo 'release'
       fi
   RELEASE_DOCKER:
     sh: |
-      if [ -f Dockerfile ] && ([ '{{.REPOSITORY_TYPE}}' == 'docker' ] || [ "$(jq -r '.blueprint.dockerPublish' package.json)" == 'true' ]); then
+      if [ -f Dockerfile ] && ([[ '{{.REPOSITORY_TYPE}}' == 'docker' ]] || [[ "$(jq -r '.blueprint.dockerPublish' package.json)" == 'true' ]]); then
         echo 'release'
       fi
   RELEASE_GO:
     sh: |
-      if [ '{{.REPOSITORY_TYPE}}' == 'go' ] && [ '{{.REPOSITORY_SUBTYPE}}' == 'cli' ]; then
+      if [[ '{{.REPOSITORY_TYPE}}' == 'go' ]] && [[ '{{.REPOSITORY_SUBTYPE}}' == 'cli' ]]; then
         echo 'release'
       fi
   RELEASE_NPM:
     sh: |
-      if [ '{{.REPOSITORY_TYPE}}' == 'npm' ] || [ "$(jq -r '.blueprint.npmPublish' package.json)" == 'true' ]; then
+      if [[ '{{.REPOSITORY_TYPE}}' == 'npm' ]] || [[ "$(jq -r '.blueprint.npmPublish' package.json)" == 'true' ]]; then
         echo 'release'
       fi
   RELEASE_PACKER:
     sh: |
-      if [ '{{.REPOSITORY_TYPE}}' == 'packer' ]; then
+      if [[ '{{.REPOSITORY_TYPE}}' == 'packer' ]]; then
         echo 'release'
       fi
   RELEASE_PYTHON:
     sh: |
-      if [ '{{.REPOSITORY_TYPE}}' == 'python' ] || [ "$(jq -r '.blueprint.pythonPublish' package.json)" == 'true' ]; then
+      if [[ '{{.REPOSITORY_TYPE}}' == 'python' ]] || [[ "$(jq -r '.blueprint.pythonPublish' package.json)" == 'true' ]]; then
         echo 'release'
       fi
   SNAP_PACKAGE:
@@ -146,7 +146,6 @@ tasks:
     status:
       - '[ "$SNAP_PACKAGE" == "null" ]'
 
-  # eslint-disable max-len
   analyze:
     summary: |
       | Command property | Description                                                                                                                                                |
@@ -160,7 +159,6 @@ tasks:
           echo 'patch'
         fi
 
-  # eslint-enable max-len
   build:
     deps:
       - build:ansible
@@ -183,12 +181,16 @@ tasks:
       - '[ -z "$RELEASE_DOCKER" ]'
 
   build:go:
+    cmds:
+      - task: build:go:continue
+    status:
+      - '[ -z "$RELEASE_GO" ]'
+
+  build:go:continue:
     deps:
       - build:go:deps
     cmds:
       - task: :build
-    status:
-      - '[ -z "$RELEASE_GO" ]'
 
   build:go:deps:
     deps:
@@ -232,17 +234,21 @@ tasks:
     deps:
       - :install:software:jq
     env:
+      ARTIFACTS_JSON:
+        sh: jq -r '.' build/artifacts.json || echo null
+      METADATA_JSON:
+        sh: jq -r '.' build/metadata.json || echo null
       PACKAGE_JSON:
         sh: jq -r '.' package.json
       RELEASE_JSON:
-        sh: jq -r '.' .release.json
+        sh: jq -r '.' .release.json || echo null
       TMP:
         sh: mktemp
       VARIABLES_JSON:
         sh: jq -r '.' .variables.json
     cmds:
-      - jq -n --arg pkg "$PACKAGE_JSON" --arg release "$RELEASE_JSON" --arg vars "$VARIABLES_JSON" --arg job "$CI_JOB_ID"
-        '.["package.json"] = $pkg | .[".release.json"] = $release | .[".variables.json"] = $vars | .CI_JOB_ID = $job' > "$TMP"
+      - jq -n --arg artifacts "$ARTIFACTS_JSON" --arg metadata "$METADATA_JSON" --arg pkg "$PACKAGE_JSON" --arg release "$RELEASE_JSON" --arg vars "$VARIABLES_JSON" --arg job "$CI_JOB_ID"
+        '.["package.json"] = $pkg | .[".release.json"] = $release | .["build/artifacts.json"] = $artifacts | .["build/metadata.json"] = $metadata | .[".variables.json"] = $vars | .CI_JOB_ID = $job' > "$TMP"
       - >
         curl -X POST -H "Content-Type: application/json" -d "$(cat "$TMP")"
         "https://maker.ifttt.com/trigger/SemanticReleaseFail/json/with/key/$IFTTT_WEBHOOK_TOKEN"

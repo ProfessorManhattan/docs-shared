@@ -49,6 +49,7 @@ tasks:
       start: Running Docker build sequence
       success: Finished running Docker build sequence
     cmds:
+      - task: ensure:running
       - task: taskfile:deps
       - |
         if [ -d ./test/structure ]; then
@@ -85,9 +86,25 @@ tasks:
             task docker:build:fat
           fi
         fi
-    preconditions:
-      - sh: test -f Dockerfile
-        msg: The `Dockerfile` must be present in order to build it
+
+  ensure:running:
+    summary: |
+      Ensures Docker Desktop is running if on a macOS machine.
+    cmds:
+      - |
+        if ! docker stats --no-stream; then
+          if [ -f /Applications/Docker.app ]; then
+            open /Applications/Docker.app
+            while (! docker stats --no-stream); do
+              echo "Waiting for Docker to launch..."
+              sleep 1
+            done
+          else
+            .config/log error 'Docker is either not running or not installed!'
+          fi
+        fi
+    status:
+      - '[[ "{{OS}}" != "darwin" ]]'
 
   login:
     deps:
@@ -97,9 +114,12 @@ tasks:
       start: Logging into DockerHub registry with `{{.DOCKERHUB_USER}}`
       success: Authenticated to DockerHub registry with `{{.DOCKERHUB_USER}}`
     cmds:
-      - echo "$DOCKERHUB_REGISTRY_PASSWORD" | docker login -u {{.DOCKERHUB_USER}} --password-stdin
-    preconditions:
-      - test -n "$DOCKERHUB_REGISTRY_PASSWORD"
+      - |
+        if [ -n "$DOCKERHUB_REGISTRY_PASSWORD" ]; then
+          echo "$DOCKERHUB_REGISTRY_PASSWORD" | docker login -u {{.DOCKERHUB_USER}} --password-stdin
+        else
+          .config/log warn 'The `DOCKERHUB_REGISTRY_PASSWORD` is not an environment variable. This is required to login to DockerHub.'
+        fi
 
   prepare:
     cmds:
@@ -221,9 +241,15 @@ tasks:
     vars:
       DOCKERHUB_DESCRIPTION:
         sh: jq -r '.description' package.json
+    env:
+      DOCKER_PASS:
+        sh: echo "$DOCKERHUB_REGISTRY_PASSWORD"
+      DOCKER_USER: '{{.DOCKERHUB_USER}}'
     cmds:
-      - docker pushrm {{.DOCKER_IMAGE}}
-      - docker pushrm --short '{{.DOCKERHUB_DESCRIPTION}}' {{.DOCKER_IMAGE}}
+      - cmd: docker pushrm {{.DOCKER_IMAGE}}
+        ignore_error: true
+      - cmd: docker pushrm --short '{{.DOCKERHUB_DESCRIPTION}}' {{.DOCKER_IMAGE}}
+        ignore_error: true
 
   shell:
     deps:
